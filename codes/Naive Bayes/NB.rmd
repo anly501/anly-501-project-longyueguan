@@ -1,0 +1,150 @@
+```{r}
+library('tidyverse')
+library('tidytext')
+library('e1071')
+library('dplyr')
+library('yardstick')
+library('caret')
+library('NLP')
+library('tm')
+#library('Sno')
+df <- read.csv('/Users/ritaguan/Desktop/cleaned_r.csv')
+
+```
+
+```{r}
+data = df %>% select(text)
+
+```
+
+evaluating model performance
+
+
+```{r}
+createTDM <- function(doc){
+  corpus <- Corpus(VectorSource(doc)) 
+  control <- list(stopwords = TRUE, removePunctuation = TRUE, removeNumbers = TRUE)
+  tdm <- TermDocumentMatrix(corpus, control) 
+  return(tdm)
+}
+
+genProb <- function(record){
+  counts <- cbind(data.frame(record$dimnames$Terms, data.frame(record$v))) 
+  names(counts) <- c("word", "count") 
+  counts <- mutate(counts, prob = count/sum(count)) 
+}
+
+```
+
+```{r}
+mTDM <- createTDM(data)
+
+
+mCounts <- genProb(mTDM)
+
+
+head(arrange(mCounts, -prob), 20) 
+
+```
+
+```{r}
+newdata<- arrange(mCounts, -prob)
+set.seed(1234)
+split <- sample(2, nrow(newdata), replace = T, prob = c(0.8, 0.2))
+train <- newdata[split == 1,]
+test <- newdata[split == 2,]
+
+```
+
+```{r}
+model <- naiveBayes(count~., data = train)
+
+
+nb_pred <- predict(model, train)
+
+table1 <- table(nb_pred, train$count)
+misclass_train <- 1 - sum(diag(table1)) / sum(table1)
+```
+
+```{r}
+model <- naiveBayes(count~., data = test)
+
+
+nb_pred <- predict(model, test)
+
+table2 <- table(nb_pred, test$count)
+misclass_test <- 1 - sum(diag(table2)) / sum(table2)
+
+```
+
+```{r}
+barplot(c(misclass_train, misclass_test), names.arg = c("train","test"))
+
+
+```
+
+```{r}
+pairs(train[ , 2:3], col = c('red','cornflowerblue'))
+
+```
+
+
+```{r}
+cm <- confusionMatrix(nb_pred, as.factor(test$count))
+cm
+```
+
+```{r}
+draw_confusion_matrix <- function(cm) {
+
+  layout(matrix(c(1,1,2)))
+  par(mar=c(2,2,2,2))
+  plot(c(100, 345), c(300, 450), type = "n", xlab="", ylab="", xaxt='n', yaxt='n')
+  title('CONFUSION MATRIX', cex.main=2)
+
+  # create the matrix 
+  rect(150, 430, 240, 370, col='#3F97D0')
+  text(195, 435, 'Class1', cex=1.2)
+  rect(250, 430, 340, 370, col='#F7AD50')
+  text(295, 435, 'Class2', cex=1.2)
+  text(125, 370, 'Predicted', cex=1.3, srt=90, font=2)
+  text(245, 450, 'Actual', cex=1.3, font=2)
+  rect(150, 305, 240, 365, col='#F7AD50')
+  rect(250, 305, 340, 365, col='#3F97D0')
+  text(140, 400, 'Class1', cex=1.2, srt=90)
+  text(140, 335, 'Class2', cex=1.2, srt=90)
+
+  # add in the cm results 
+  res <- as.numeric(cm$table)
+  text(195, 400, res[1], cex=1.6, font=2, col='white')
+  text(195, 335, res[2], cex=1.6, font=2, col='white')
+  text(295, 400, res[3], cex=1.6, font=2, col='white')
+  text(295, 335, res[4], cex=1.6, font=2, col='white')
+
+  # add in the specifics 
+  plot(c(100, 0), c(100, 0), type = "n", xlab="", ylab="", main = "DETAILS", xaxt='n', yaxt='n')
+  text(10, 85, names(cm$byClass[1]), cex=1.2, font=2)
+  text(10, 70, round(as.numeric(cm$byClass[1]), 3), cex=1.2)
+  text(30, 85, names(cm$byClass[2]), cex=1.2, font=2)
+  text(30, 70, round(as.numeric(cm$byClass[2]), 3), cex=1.2)
+  text(50, 85, names(cm$byClass[5]), cex=1.2, font=2)
+  text(50, 70, round(as.numeric(cm$byClass[5]), 3), cex=1.2)
+  text(70, 85, names(cm$byClass[6]), cex=1.2, font=2)
+  text(70, 70, round(as.numeric(cm$byClass[6]), 3), cex=1.2)
+  text(90, 85, names(cm$byClass[7]), cex=1.2, font=2)
+  text(90, 70, round(as.numeric(cm$byClass[7]), 3), cex=1.2)
+
+  # add in the accuracy information 
+  text(30, 35, names(cm$overall[1]), cex=1.5, font=2)
+  text(30, 20, round(as.numeric(cm$overall[1]), 3), cex=1.4)
+  text(70, 35, names(cm$overall[2]), cex=1.5, font=2)
+  text(70, 20, round(as.numeric(cm$overall[2]), 3), cex=1.4)
+}  
+
+draw_confusion_matrix(cm)
+
+
+```
+```{r}
+write.csv(data, "nb_r.csv")
+```
