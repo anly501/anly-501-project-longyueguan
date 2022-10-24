@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>SVM</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+<style>
+   .container-fluid a {
+
+  color: #ffffff;
+  
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-dark">
+   
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://longyueguan.georgetown.domains/501-project-website/index.html">About Me</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="nav justify-content-center" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://github.com/anly501/anly-501-project-longyueguan/tree/main/codes/01-data-gathering">Code</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Nav.html#"> Introduction</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Gathering.html#"> Data Gathering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Cleaning.html#"> Data Cleaning</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Exploring_data.html#"> Exploring Data</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Naive_Bayes.html#"> Naive Bayes</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Decision_Tree.html#"> Decision Trees</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html##"> SVM</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#"> Clustering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#"> ARM and Networking</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" hreßf = "#"> Conclusion</a>
+          </li>
+          </ul>
+      
+      </div>
+    </div>
+  </nav>
+
+<br>
+<br>
+<h3><b><i>SVM: </h3><h5>It is a Support Vector Machine classification that could fin a hyperplane in an N-dimensional space of classifies the data 
+                        points. Then it will perform classficiation by finding the hyper-plane that differentiates the two classes. It has higher speed
+                      and better performance with a limited number of samples. It makes the algorithm very suitable for text classification problems. Also,
+                      it has different choices of kernel, such as linear, poly and rbf.  </h5>
+</i></b>
+<br>
+
+<p>The section provides usage of Support Vector Machine Classification. This part aims to do prediction and analysis based on the sentiment words and their label. And all data prepared
+  was done in the Naive Bayes section. Therefore, we still need to do some steps before doing classification. We did a TF-IDF vectorizer with max feature equals 2500, min df equals 7, and max df equals 0.8.
+  We also want to do a fit transform for the vectorizer and convert those to the array. Then split the train data and test data with a test size equal to 0.2 and a training size equal to 0.8. After all, the data is ready
+  to fit in the model. Since we are going to do an SVM classifier, we decide to use the RBF kernel to train the model. Then we will fit the X_train and y_train data into the model. So we will get the predicted value for
+  both test and train data. Then all outputs will show with visualization as below. 
+</p>
+<p>
+  Overall, the goal that we want to do in the section is to use support vector classification, and we could compare the accuracy with other models. It could also give us an idea of prediction accuracy and notice whether the model is good enough to use.
+  And the purpose is to want to do prediction and analysis with inspirational words based on the climate change topic. The SVM classification could help us know how it predicts the datasets. And it will find out which classification models get better
+  accuracy results. The outcome could give us an idea of people's emotions based on the topic. If the model works well, it could also help us to predict with all historical data and find the changes in people's emotions. So, we will do the classification 
+  report and confusion matrix of both train and test datasets.
+
+</p>
+
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Python Section</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/data/nb_py.csv'>Python SVM Classifier with Quarto</a></td>
+    </tr>
+    <tr>
+      <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/codes/Naive%20Bayes/NB.ipynb'>Python Code for SVM Classifier</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<h5><b>Results:</b></h5>
+<p>
+  The histogram shows the class distribution of the dataset column. It clearly shows what the dataset column is like and notices that we will make the prediction of correctness based on positive, negative, and neutral words on the climate change
+  topic. In the plot are many different labels, which means we have more and more observations in the dataset. Since we did the data cleaning and EDA part before, we could find out that every class column has the sentiment words of each tweet. 
+  Therefore, the class distribution helps us check all columns and whether they are ready to use in different models. At this time, we could notice that some words show up more frequently. But we will check the result after comparing it with 
+  other models. 
+</p>
+<img src="svm_cd.png" width="450" height="300">
+<br>
+<br>
+
+
+<p>
+  Since the confusion matrix shows the relationship between truth and prediction, we could get our confusion matrix of the baseline model below. According to the confusion matrix, it is easier to find out that the accuracy of test data is 64%. And 
+  the precision score for negative words is 0.67, and the precision score for neutral words is 0.89. To use the baseline model successfully, we will compare the accuracy after we get the accuracy score of the SVM model. 
+</p>
+<img src="svm_baseline.png" width="450" height="400">
+<br>
+<br>
+
+<p>For SVM classification, the confusion matrix could help us find the relationship between truth and prediction shown in the table below. It also gives an accurate result of 
+  53.57% of training data. The confusion matrix predicts the relationship between sentiment words (positive, negative, and both emotions) and its label. It could help to check and predict 
+  how the sentiment works in the model. The confusion matrix table shows the relationship between truth and prediction with those three kinds of inspirational words. We also get
+  the classification report of the training data. And the classification report shows the precision, recall, and f1-score of all emotional terms. For example, it provides the precision score of 
+  negative words as 0.43 and positive words as 0.
+
+</p>
+<img src="svm_1.png" width="450" height="400">
+
+<br>
+<br>
+<p>The table below shows the confusion matrix of test dataset, which could help us find out the relationship betwen truth and prediction. The accuracy of the test dataset is 78.57%. The confusion matrix of 
+  test data shows the accuracy of how the emotional works in the model. We also use visualization to show the confusion matrix result because it could give us a outcome obviously. Besides, we also return the classficiation
+  report solution of the test data through the svm model. It includes the precision, recall and f1 score of the test data. For example, we could get the f1-score of negative words is 0.82 and the f1-score of neutral words is 0.73.
+
+</p>
+<img src="svm_2.png" width="450" height="400">
+
+
+<br>
+<br>
+<h5><b>Conclusion:</b></h5>
+<p>
+  The SVM classifier is the third model we use in the project. And the SVM classifier is used in a different way than the other two models. Because in this part, we are not doing the sentiment analysis with words in each tweet.
+  In this part, we predicted the correct usage of emotional words. Since we did a baseline model, it also helped us to get accuracy. Then we would like to compare the accuracy results with both the baseline and the SVM models.
+  We got the accuracy from the baseline model is 64%. Since we only get the test data accuracy from the baseline model, we will compare our data accuracy from the SVM model, which is 78.57%. It shows that we get a better accuracy
+  the result from the SVM model.
+</p>
+<p>
+  And we also want to use the accuracy score to check whether the works are good or not and to check how the correctness works. The accuracy is not too high but not too bad in this part. That means we still need some improvements in 
+  future work. However, the process is good, and it could be better if we check more models in the future. The accuracy score could also be affected by the size of the dataset. And it might be why the accuracy score is 
+  not too high. Therefore, we could obtain a larger dataset to do all processes again, which might result differently. 
+</p>
+<p>
+  Lastly, we could get information from the SVM classifier that the correctness of emotion words is not bad; however, it needs a larger dataset to continue and support this idea on the climate change topic. On the other side, we could find out
+  the outcome shows the neutral words has a more significant number and predict more correctly than the other two. Also, predicting the topic with different models could improve the prediction system and notice how people's real emotions on the climate change
+  topic.
+
+</p>
+
+<br>
+</html>
+

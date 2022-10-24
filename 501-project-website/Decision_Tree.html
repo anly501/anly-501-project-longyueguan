@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>Decision Trees</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+<style>
+   .container-fluid a {
+
+  color: #ffffff;
+  
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-dark">
+   
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://longyueguan.georgetown.domains/501-project-website/index.html">About Me</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="nav justify-content-center" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://github.com/anly501/anly-501-project-longyueguan/tree/main/codes/01-data-gathering">Code</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Nav.html#"> Introduction</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Gathering.html#"> Data Gathering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Cleaning.html#"> Data Cleaning</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Exploring_data.html#"> Exploring Data</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Naive_Bayes.html#"> Naive Bayes</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Decision_Tree.html#"> Decision Trees</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html#"> SVM</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#"> Clustering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "#"> ARM and Networking</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" hreßf = "#"> Conclusion</a>
+          </li>
+          </ul>
+      
+      </div>
+    </div>
+  </nav>
+
+<br>
+<br>
+<h3><b><i>Decision Tree: </h3><h5>A classification could create a model that predicts the value of target variables.
+  The decision tree uses the tree representation to solve the situation in which the leaf node corresponds to a class label,
+   and attributes are represented on the internal node of the tree. The decision tree classification mainly uses the dataset features to 
+  create yes or no questions. Then it will split the dataset based on the value of the feature and create new nodes.</h5>
+</i></b>
+<br>
+
+
+<p>The section provides usage of Decision Tree Classification and shows the output of the Decision Tree Classification. All data preparation part was done in the Naive Bayes section.
+  Therefore, we apply Decision Tree Classification to datasets in this part. However, we still need to do some steps before doing classification. Firstly, we did a TF-IDF vectorizer and fit transform
+  to the array. The next step is to split the train and test data, and we decide to break it into test size = 0.2 and train size = 0.8. And the goal we want is to do a sentiment analysis
+  of both positive and negative words. So, the last step is to do a classifier model and fit the X_train and y_train data into the model. Then we will get the predicted value for both train and test data.
+   Then it is ready to do sentiment analysis with Decision Tree Classification and get all necessary results. The output with visualization is shown below. 
+</p>
+<p>
+  Overall, the goal that we want to use decision tree classification is because we want to compare the accuracy scores with other models. And the purpose is that we want to do a sentiment analysis 
+  based on the climate change topic. That means we want to determine the sentiment of tweets and people's feelings about the issue. Therefore, the decision tree classification could help us know how it predicts
+  with the datasets and find which classification model gets the best accuracy value. So, we will do a classification report, confusion matrix, and trees of all train and test datasets. 
+</p>
+
+
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Python Section</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/data/nb_py.csv'>Python Decision Tree Classifier with Quarto</a></td>
+    </tr>
+    <tr>
+      <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/codes/Naive%20Bayes/NB.ipynb'>Python Code for Decision Tree Classifier</a></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+
+<h5><b>Results:</b></h5>
+<p>
+  The histogram shows the class distribution of the dataset label. It clearly shows what the label class is like and notices that we will do sentiment analysis based on positive, negative, and neutral words on the climate change
+  topic. In the plot, it shows three labels, which are -1, 0, and 1 as the label. Since we did the data cleaning and EDA part before, we could find out that we set up that -1 means negative sentiment words, 0 means we have both sentiment
+  words, which stand for neutral words, and lastly, 1 means positive sentiment words. Therefore, the class distribution helps us check other labels and whether they are ready to use in different models. At this time, we could notice that 
+  it has more negative words; however, we could find out our result later with models.
+</p>
+<img src="dt_cd.png" width="450" height="300">
+
+<br>
+<br>
+
+<p>
+  Below, the confusion matrix shows the relationship between truth and prediction through the baseline model. According to the confusion matrix, it is easier to find out that the accuracy of test data is 79%. And 
+  the precision score of negative words is 0.8, and the precision score of neutral words is 0.91. To use the baseline model successfully, we will compare the accuracy after we get the accuracy score of the Decision Tree
+  model. 
+</p>
+<img src="dt_baseline.png" width="450" height="400">
+
+<br>
+<br>
+
+<p>For Decision Tree Classification, we find out that the relationship between truth and prediction shows in the table below. And it also gives an 
+  accuracy result of 66.07%. The Confusion Matrix predicts the sentiment analysis of climate change topics with positive, negative, and positive and negative emotions.
+  It clearly shows the relationship between truth and prediction with those three different emotions. We also get the classification report, which shows the training data's precision, recall, and 
+  f1-score. For example, it gives an f1 score for negative words equal to 0.72 and an f1 score for positive words equal to 0.5.
+</p>
+<img src="dt_1.png" width="450" height="400">
+
+<br>
+<br>
+<p>The plot below shows the test dataset's confusion matrix, which is the relationship between truth and prediction. The accuracy of the test dataset is 71.43%. This test data confusion matrix also shows the forecast of the sentiment analysis of climate change topics with different emotions. We want to use visualization to show the confusion matrix result because it could
+  give us a clear outcome to compare with other models. Besides, we also print out the classification report of the test dataset through the decision tree model. It includes the precision, recall, and f1 score 
+  of the data. For example, we get the precision score of negative words is 0.43 and the precision score of positive words is 1.
+</p>
+<img src="dt_2.png" width="450" height="400">
+
+<br>
+<br>
+<p>The following plot is the tree we created with the decision tree classifier, visualizing the tree through the model. It uses Gini Impurity as a loss function by default. With the model trained, we can visualize the resulting decision tree with the plot-tree method and show the plot. Since the tree uses the Gini ratio, we should know that it measures the impurity of
+  the node. Therefore, the tree of each node shows the Gini ratio, samples, and values. 
+
+</p>
+<img src="dt_3.png" width="600" height="500">
+
+
+<br>
+<br>
+<h5><b>Conclusion:</b></h5>
+<p>
+  To conclude, the decision tree classifier should be the second model we used to analyze the climate change topic sentiment. Firstly, we could notice that the accuracy score of the test data is higher than the train data. Also, Comparing the accuracy score of test data from both the baseline model and decision tree model, we could notice that the baseline model has a higher 
+  accuracy score. Since we are doing the sentiment analysis of the climate change topic, we still need to compare our results with negative and positive words from tweets.
+</p>
+<p>
+  And the accuracy score is not high, which means it needs some improvement in the future to improve the accuracy. The overall process is on the right track, but it could still improve some details in future work. For example, the dataset is small, so it might be hard to compare the accuracy between each model. And it might also cause lower accuracy of the model.
+  So, we could get a larger dataset of climate change topics of tweets in the future and make our prediction again.  
+  </p>
+<p>
+  Lastly, we could get information from the decision tree classifier that people have more negative emotions than positive emotions on the climate change topic. On another side, we could notice some people might see that climate change has become a big issue in the world environment. We could also notice that different classifiers and models could
+  help us dealing and predict various topics. Then it could help us improve ourselves or provide notification to society. 
+</p>
+
+
+<br>
+<br>
+
+</html>
+
