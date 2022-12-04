@@ -51,13 +51,13 @@
             <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html#"> SVM</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> Clustering</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Clustering.html#"> Clustering</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> ARM and Networking</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/ARM.html#"> ARM and Networking</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> Conclusion</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Conclusion.html#"> Conclusion</a>
           </li>
           </ul>
       
@@ -65,15 +65,35 @@
     </div>
   </nav>
 
+
+
 <br>
 <br>
 <h3><b><i>World of Data: About Datasets and Data Gathering:</i></b></h3>
+<br>
+<h5>What is API?</h5>
+<p>
+APIs is application programming interface and they are all around our life. It describes connectivity interfaces to an application. That means when we are use an app, they will connect the Internet and send data to server.
+And for our both Python section and R section, we use Twitter API to collect data from tweets with the specific topic. Since we are doing sentiment analysis of climate change, the topic that we choose when collect data with 
+Twitter API is Climatchange.
+</p>
+<p>
+  The Twitter API enables programmatic access to Twitter in unique and advanced ways. And the Twitter Developer Platform allows us to harness the power of Twitter's open, global, real-time, and historical platform within our applications.
+  And we use Twitter API to collect the most recent 100 tweets. After we get the API key, API key secret, Bearer Token, Access Token, and Access Token Secret, we can finish the set of collecting data.
+</p>
+References: “Twitter Developer Apps Overview | Docs | Twitter Developer Platform.” Twitter, Twitter, https://developer.twitter.com/en/docs/apps/overview. 
+
+<br>
 <br>
 <h5>Python Code</h5>
 <ul></ul>
 <li><a href="https://github.com/anly501/anly-501-project-longyueguan/blob/main/codes/01-data-gathering/Data_Gathering_pythonapi.ipynb">Twitter Data</a><h9><b>- The Dataset from Twitter collected by Python API. Getting Data with Query with Climatchange from the most recent 100 tweets. Collect the data in JSON format</b></h9></li>
 <br>
 <p>The Twitter API provides different chocies of fields, and we use tweetid, language, author_id, text, created_at:</p>
+<p>
+  And all data we scrapped from Python API will use as raw data. Since we scrapped a total of 4 columns, we will use most of it and do our sentiment analysis later.
+  However, to use it well, we will clean the data, make it in excellent shape for each method, and put it into methods. But now, we only have raw data with 100 rows and 5 columns. 
+</p>
 <img src="images/2.jpg" width="1500" height="450">
 
 <br>
@@ -84,6 +104,12 @@
 <li><a href="https://github.com/anly501/anly-501-project-longyueguan/blob/main/codes/01-data-gathering/r_api.R">Twitter Data</a><h9><b>- The Dataset from Twitter collected by R API. Getting Data with Query with CLIMATECHANGE from the most recent 100 tweets. Collect the data in CSV format</b></h9></li>
 <br>
 <p>The Twitter API provides different chocies of fields, and we use created_at, lang, conversation_id:</p>
+<p>
+  In this part, we also collected data from Twitter; however, we used R API to collect this part o the data. And we only created five factors in this part.
+  And it is also raw data, and we need further preparation and clean steps. Therefore, our next step is data cleaning and setting up data for predictions and 
+  sentiment analysis. 
+
+</p>
 <img src="images/3.jpg" width="1500" height="450">
 <h5 class></h5>
 
