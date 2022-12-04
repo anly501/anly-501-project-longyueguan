@@ -51,13 +51,13 @@
             <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html#"> SVM</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> Clustering</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Clustering.html#"> Clustering</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> ARM and Networking</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/ARM.html#"> ARM and Networking</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> Conclusion</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Conclusion.html#"> Conclusion</a>
           </li>
           </ul>
       
@@ -69,18 +69,48 @@
 <br>
 <h3><b><i>Preparing to start the Project, next step: Data Cleaning</i></b></h3>
 <br>
+<img src="images/clean2.png" width="1000" height="500">
+<br>
+<p>
+  This section is a data cleaning section, and the purpose of this section is to prepare our data for further analysis and predictions. 
+  Data cleaning is cleaning data to fix errors, delete duplicates and remove irrelevant data. And in our case, we also did
+  the process to tokenize the text columns. The benefit of data cleaning is to stay organized because if we get tidy data, we can
+  use it more effectively. And it will also help us to avoid mistakes and make our data and next step more accurate. Sometimes, the data cleaning
+  section could be easy, and it could be simply removing empty values and changing column names. However, some could be complicated, such as creating a new 
+  column with tokenized text data and having more steps or creating more columns to get ready.
+</p>
+<p>
+  Specifically, we read the raw data and save it into DataFrame type. Then we replace all empty values with NA, get unique data, and remove emoji
+  from the text column. That is what we did for the first part of data cleaning; however, after we did all methods, we improved more steps in data cleaning.
+  We also did remove the URL, remove stop words, remove punctuation and remove words containing numbers. Also, since we are doing sentiment analysis, we also
+  created a new column for finding positive and negative comments. And the column will return all positive and negative words exits in the text of the tweets. The last 
+  step is to count and vectorize the data and make it into the data frame column.  
+</p>
+<br>
+<p><b>Cleaned DataFrame with created_at, lang, author_id, text, id and tokenized text:</b></p>
+<p>
+  As we mentioned above, we did the first part of data cleaning. And the following DataFrame shows the result and the cleaned DataFrame. 
+  The column of text_token could find out that we did tokenize from the text column, and we could see we separate text data as
+  words dataset. However, we could find that it also has some changes in the second image below. And that is part of the improved data
+  cleaning process, and we remove all unnecessary words or punctuations from the tokenized text data. And we could look at the last three columns
+  from the DataFrame, which shows all sentiment words from the text of the tweets. 
+</p>
+<img src="images/2.1.png" width="1100" height="400">
+<img src="images/clean1.png" width="1100" height="500">
+
+<br>
+<br>
 <br>
 
-
-<p>Cleaned DataFrame with created_at, lang, author_id, text, id and tokenized text:</p>
-<img src="images/2.1.png" width="2000" height="400">
-
-<br>
-<br>
-<br>
-
-<p>Cleaned DataFrame with text, created_at, lang and author_id:</p>
-<img src="images/2.2.png" width="2000" height="400">
+<p><b>Cleaned DataFrame with text, created_at, lang and author_id:</b></p>
+<p>
+  The following image shows how we do the data cleaning section with R and the data collected by R API. For this section, we did simple data-cleaning 
+  process. We checked the unique values in DataFrame. And also we remove the emoji from DataFrame; however, we count the number of missing values from the 
+  whole DataFrame. But the result that we got is there is no missing value, so we do not need to remove any values or change to NA. And we cleaned the data 
+  with RT and removed the punctuation from the column. And the last step that we do to clean data is to remove customized stop words, which means we can choose
+  what stopwords we would like to remove. 
+</p>
+<img src="images/2.2.png" width="1100" height="400">
 
 <br>
 <br>
