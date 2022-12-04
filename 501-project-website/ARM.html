@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <title>ARM and Networking</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+<style>
+   .container-fluid a {
+
+  color: #ffffff;
+  
+}
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+</style>
+
+<nav class="navbar navbar-expand-lg bg-dark">
+   
+    <div class="container-fluid">
+      <a class="navbar-brand" href="http://longyueguan.georgetown.domains/501-project-website/index.html">About Me</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="nav justify-content-center" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://github.com/anly501/anly-501-project-longyueguan/tree/main/codes/01-data-gathering">Code</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Nav.html#"> Introduction</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Gathering.html#"> Data Gathering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Data_Cleaning.html#"> Data Cleaning</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Exploring_data.html#"> Exploring Data</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Naive_Bayes.html#"> Naive Bayes</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Decision_Tree.html#"> Decision Trees</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html#"> SVM</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Clustering.html#"> Clustering</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/ARM.html#"> ARM and Networking</a>
+          </li>
+          <li class = "nav-item">
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Conclusion.html#"> Conclusion</a>
+          </li>
+          </ul>
+      
+      </div>
+    </div>
+  </nav>
+
+<br>
+<br>
+<h3><b><i>ARM and Networking: </h3><h5>ARM is Association rule mining learning, which is an unsupervised rule-based machine learning method for discovering statistically relevant inter-relations 
+    between variables in large databases. And Network Analysis is always used in application tasks. And it could help us quickly understand the structure of the relationship between different values.
+    For example, network analysis could help us find the relationship between users and followers on Twitter.
+</h5>
+</i></b>
+<br>
+
+
+<div class="accordion" id="accordionPanelStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            <h5><b>Introduction:</b></h5>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p> This section provides the usage of ARM. Since the ARM is a learning technique to identify the dependencies between two data groups. We want to use it in our sentiment analysis based on 
+                climate change from tweets. We will try to find three groups of transaction data in the ARM process. And the first group would be the mixed positive and negative words from tweets data, the second
+                group would be only positive words, and the last group should be only negative words. And then, we would like to compare those results and find beneficial effects. 
+            </p>
+            <p>
+                Then we will use our tweets data; however, it is a different process from what we did from previous methods, such as Naive Bayes, Decision Trees, and SVM. We first would like to re-clean the data
+                from the firstly API dataset. We did a clean process again to get the expected nested list, which is a transaction data to work on the process, which is getting ARM and also plotting network objects. 
+                To make all methods work correctly, we must transfer all data from the dataframe to a nested list and match their position. After doing all these, our data is ready to use and will get the results.   
+              </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            <h5><b>Theory:</b></h5>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <p>
+                We did use ARM in this part, and it will provide us support, confidence, support*confidence, and lift values. And support threshold value measures the percentage of all item-set A and B together and compared with all other transactions.
+                Confidence measures the percentage of A and B items that occur when they contain A. Also, When A and B are independent, the lift could calculate the percentage of observed versus expected. Since we also have support*confidence,
+                it could provide the metrics of the product of support and confidence. 
+                 <br><br> And overall, we used the Apriori Algorithm of ARM in the process. And Apriori Algorithm is the method that could calculate rules that express the probabilistic relationship between items. The main idea of the Apriori Algorithm is all non-empty subsets
+                 of a frequent itemset must also be frequent. According to the Apriori Algorithm, we could notice that the function of getting the support threshold is equal to the number of transactions containing both X and Y divided by the total number of transactions. And the confidence
+                 equals the number of transactions containing both X and Y divided by the number of transactions only containing X. And in our case, when we run the Apriori Algorithm, we set up the min_support as 0.003, min_confidence as 0.02, min_length as 1 and max_length as 5.
+            </p>
+            <p>
+                We also use network analysis to help us quickly understand the relationship with those transaction data. As we know, network graphs are structured with nodes and edges. And it has two types of edges, which are un-directed and directed.
+                In this case, we have directed edges on all network graphs. And all edges can correspond to different interactions. And we are going to use it to find out how it interacts with different sentiment words on climate
+                change topic.
+                <br><br>
+                And to be more specific, edges could represent the presence of a relation among the elements defined by the nodes. And nodes are a set of elements. And directed edges will represent an arrow between the nodes. And if the arrow is from A to B, then
+                A has a direct relationship with B. And in our case, since we are doing sentiment analysis, our nodes would be sentiment words, and we could see if they have a relationship with each other with directed edges. If they have a direct connection, they have a close relationship. 
+                It could also have a situation that the relationship is connected with two directed edges. Then that means not closer than the previous case. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+            <h5><b>Methods:</b></h5>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Python Section</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/codes/ARM/ARM.ipynb'>Python Code for ARM and Networking</a></td>
+                  </tr>
+                  <tr>
+                      <td><a href ='https://github.com/anly501/anly-501-project-longyueguan/blob/main/data/nb_py.csv'>Data for ARM and Networking</a></td>
+                    </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<br>
+<br>
+
+
+<h5><b>Results:</b></h5>
+<p>
+    The following images show the result of the network graph and ARM dataframe of all sentiment words in climate change topics from tweets. First of all, we could get some information 
+    from the ARM dataframe. For example, according to the confidence, we could suggest that "advocates" exist 100% of the time that "leading" exists. And according to the support result,
+    we could set the support threshold >0.02, which will result in most of the rules would be removed because they did not meet the threshold. Lastly, since we also get the lift value, we could find out 
+    most of them are greater than 1, which positively relates to the item-set. Also, we could check the network graph and see all edges are directed to nodes. And "advocates" is one of the 
+    nodes with the most relations on one side. And at the other side, we could find "protection" also has a lot of relations with directed edges. 
+
+</p>
+<img src="images/arm1.png" width="700" height="600" class="center">
+<img src="images/total1.png" width="650" height="300" class="center">
+<br>
+<br>
+
+<p>
+    Below, those two images are similar to what we mentioned above; however, it is the network graph and ARM dataframe of only positive transaction data in climate change topics. And we could 
+    also get some helpful information from the ARM dataframe. For example, we could notice that most item-sets are closer to irrelevant. And if we set the support threshold to >0.06, then most of item-set
+    will remove because it does not meet the threshold. And according to our browser ARM dataframe, we could notice most of them is strong rule based on confidence results. And it could also say that 
+    "powerful" exit 50% of the time that "advocates" exit. However, "powerful, advocates, protection, leading" are exits 100% of the times that "thank" exits. Also, most item-set has positive relations
+    based on lift results. Lastly, according to the network graph, "powerful," "thank," and "advocates" are nodes that have the most directed edges. And that also means they have the most direct relations with other nodes.
+</p>
+
+<img src="images/arm2.png" width="700" height="600" class="center">
+<img src="images/pos.png" width="650" height="300" class="center">
+<br>
+<br>
+
+<p>Here is the last network graph and ARM dataframe in this part, and it is based on only negative word transaction data on climate change topics. This part is entirely different from the above two sections.
+    And similarly, we could get information based on negative word transaction data. The ARM dataframe only contains six columns. However, we still can notice that those item sets are closer to irrelevant based on
+    the support threshold. And if we set the support threshold to >0,03, then the rule {"exacerbate"} -> {"lack"}, {"lack"} -> {"exacerbate"}, {"losing"} -> {"lost"} and {"lost"} -> {"losing"} would be removed, which because
+    they did not meet the threshold. And since when the confidence value equals 1 means a strong rule, and 0 means no instance of a rule occurring. We could notice that most of them have strong rules except {"lost"} -> {"losing"}.
+    And all of the item-sets are having positive relation. Then we could check the network graph, which clearly shows three edges with six nodes. And all of them are positive relations. 
+    
+</p>
+<img src="images/arm3.png" width="700" height="600" class="center">
+<img src="images/neg.png" width="650" height="200" class="center">
+<br>
+<br>
+
+
+
+
+<br>
+<br>
+<h5><b>Conclusion:</b></h5>
+<p>
+    To conclude, we used ARM and network analysis on our dataset and saw how it works with those methods. We did three groups of transaction data, which include all sentiment words, positive words only
+    , and negative words only. And we could make a comparison based on their results. Based on their network graphs, we could see that the transaction data of negative words only have the least relations
+    and nodes. And comparing with the network graph of positive words only, we could notice that it has more positive words from tweets on the climate change topic, and they have great connections between 
+    each word. 
+</p>
+<p>
+    Lastly, since we could get a lot of information from each ARM dataframes, we could conclude that most of the support threshold is closer to 0, which means they are closer to irrelevant from the three ARM results. 
+    And most of their lift values are greater than one, and we could say that all of them seem to have positive relations. And also, based on the confidence results, most of them have a strong rule with their
+    item-sets except a few sets. However, based on the dataset we scrapped from Twitter on sentiment analysis, it is only what we get. If we had a larger dataset, the results might change.
+    And also, if we change the time to scrap the tweets, such as a few years ago, it might also change all results. But, based on our dataset, our findings could say that people are starting to pay attention to climate change topics
+    and it has more positive sentiment words through their tweets. 
+</p>
+
+
+<br>
+<br>
+<h7><b>References:</b></h7>
+<p>
+    Loem, Mengsay. “Network Analysis.” Medium, Towards Data Science, 23 Mar. 2021, https://towardsdatascience.com/network-analysis-d734cd7270f8. 
+</p>
+<p>
+    “Analyze Co-Occurrence and Networks of Words Using Twitter Data and Tweepy in Python.” Earth Data Science - Earth Lab, 5 Feb. 2018, https://www.earthdatascience.org/courses/use-data-open-source-python/intro-to-apis/calculate-tweet-word-bigrams/. 
+</p>
+<p>
+    Chonyy. “Apriori: Association Rule Mining in-Depth Explanation and Python Implementation.” Medium, Towards Data Science, 19 Sept. 2022, https://towardsdatascience.com/apriori-association-rule-mining-explanation-and-python-implementation-290b42afdfc6. 
+</p>
+</html>
+
