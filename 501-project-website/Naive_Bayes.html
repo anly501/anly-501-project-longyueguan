@@ -52,13 +52,13 @@
             <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/SVM.html#"> SVM</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> Clustering</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Clustering.html#"> Clustering</a>
           </li>
           <li class = "nav-item">
-            <a class = "nav-link" href = "#"> ARM and Networking</a>
-          </li>ß
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/ARM.html#"> ARM and Networking</a>
+          </li>
           <li class = "nav-item">
-            <a class = "nav-link" hreßf = "#"> Conclusion</a>
+            <a class = "nav-link" href = "http://longyueguan.georgetown.domains/501-project-website/Conclusion.html#"> Conclusion</a>
           </li>
           </ul>
       
@@ -73,52 +73,39 @@
           better comparsions with other mdoels.</h5>
 </i></b>
 <br>
-<br>
+
 
 <p>For this section, it is time to work with the Naive Bayes Classification. And the classifier that is used MultinomialNB. 
     However, it is necessary to do some steps for the data preparation for analysis. Therefore, for python, since we did tokenization before,
     we still need to find positive and negative words from each tokenized column and add them to a new column. Then the dataset is ready to do 
-    whether tfidf or prediction. In python, we use Naive Bayes to do sentiment analysis of tweets on the topic of climate change. For the R section, we did use
+    whether tfidf or prediction. In python, we use Naive Bayes to do sentiment analysis of tweets on the topic of climate change. 
+    </p>
+    <p>
+    For the R section, we did use
     Naive Bayes to predict the relationship between the number of words and the probability of words. Using visualization to show the output is a good way, 
     so for the python part, we use heatmap and barplot to display the accuracy and confusion matrix output. We used a bar plot and confusion matrix for the R part to show the result.  
 </p>
-
-<br>
-<br>
-
-<h5><b>Conclusion:</b></h5>
-<p>For Naive Bayes Classification, we find out that the relationship between truth and prediction shows in the table below. And it also gives an 
-    accuracy result of 71%. The Confusion Matrix predicts the sentiment analysis of climate change topics with positive, negative, and both positive and negative emotions.
-    It clearly shows the relationship between truth and prediction with those three different emotions.  
+<p>
+  Overall, we want to use the Naive Bayes classification because we would like to compare the accuracy scores with other models at
+  the end. And the result will include an accuracy score and confusion matrix. And in this section, we will do both test and train data and find out
+  if there has any difference between its accuracy score. 
 </p>
-<img src="images/nb_py_1.png" width="450" height="400">
+<br>
 
-<br>
-<br>
-<p>The bar plot below shows the comparison of train data accuracy and test data accuracy of sentiment analysis. It could find out that the training accuracy is 64.3%, and 
-    the test accuracy is 71.4%. We could notice that the test accuracy is higher than the training accuracy. It might be because the 
-    difference between the two is large.
+<h5><b>Theory:</b></h5>
+<p>
+  We used Naive Bayes in this part and did it in both Python and R sections. And we used Multinomial Naive Bayes Algorithm for both parts.
+  The multinomial Naive Bayes algorithm always uses discrete features, and it could use to predict the text. And we use it in our cleaned data, which
+  is the tokenized sentiment of positive, neutral, and negative words. 
 </p>
-<img src="images/nb_py_2.png" width="450" height="400">
-
-<br>
-<br>
-<p>The bar plot below compares train data misclassification accuracy and test data misclassification accuracy. And it related to the total number of words in the tweets data. And through the plot, it is easy to notice that
-    the training and testing accuracy should be 1 - misclassification accuracy. Therefore, the training accuracy is 99.5%, and the testing accuracy is 99.3%. The accuracy is high, which means the prediction of the total number of words gives a
-    good result. 
+<p>
+  As we mentioned above, we use MultinomialNB for this part. And the function of Multinomial Naive Bayes is P(A|B) = P(A)*P(B|A)/P(B) according to the Bayes 
+  Theorem. That means it calculates the probability of A when B is provided. And Afterall, it will provide us an accuracy score for both test and train dataset
+   through the method. Since we will use confusion matrix to compare the result, it is necessary to know what is confusion matrix. It includes true positive, true negative,
+   false positive and false negative. And the accuracy score equals to (TP + TN) / (TP + TN + FP + FN).
 </p>
-<img src="images/nb_r_1.png" width="450" height="400">
-
 <br>
-<br>
-<p>For predicting the performance of the total number of words in tweets data, the confusion matrix graph shown below has given accuracy of 99.5%. We also get the Kappa coefficient accuracy is 98.7%. 
-    And the Kappa coefficient can be used to evaluate the accuracy of the classification. Therefore, we could notice the performance provided a good result since it has a high accuracy score. 
-</p>
-<img src="images/nb_r_2.png" width="450" height="400">
-
-<br>
-<br>
-
+<h5><b>Method and Data:</b></h5>
 <table class="table">
   <thead>
     <tr>
@@ -137,9 +124,62 @@
     </tr>
   </tbody>
 </table>
+<br>
+
+<h5><b>Results:</b></h5>
+<p>For Naive Bayes Classification, we find out that the relationship between truth and prediction shows in the table below. And it also gives an 
+  accuracy result of 71%. The Confusion Matrix predicts the sentiment analysis of climate change topics with positive, negative, and positive and negative emotions.
+  In the confusion matrix table below, we notice that it includes true positive, true negative, false positive, and false negative values. And in this specific plot, 0 means  
+  negative words, 1 means neutral terms, and 2 means positive words. It clearly shows the relationship between truth and prediction with those three emotions.  
+</p>
+<img src="images/nb_py_1.png" width="450" height="400">
+
+<br>
+<br>
+<p>The bar plot below shows the comparison of train data accuracy and test data accuracy of sentiment analysis. It could find out that the training accuracy is 64.3%, and 
+    the test accuracy is 71.4%. We could notice that the test accuracy is higher than the training accuracy. It might be because the 
+    difference between the two is large.
+</p>
+<img src="images/nb_py_2.png" width="450" height="400">
+
+<br>
+<br>
+<p>The bar plot below compares train and test data classification accuracy. And it related to the total number of words in the tweets data. And through the plot, it is easy to notice that
+  the training and testing accuracy should be 1 - classification accuracy. Therefore, the training accuracy is 99.5%, and the testing accuracy is 99.3%. The accuracy is high, which means the prediction of the total number of words gives a
+  good result. However, comparing both accuracy scores, we could notice both work great because they all have a score more significant than 99%.
+</p>
+<img src="images/nb_r_1.png" width="450" height="400">
+
+<br>
+<br>
+<p>For predicting the performance of the total number of words in tweets data, the confusion matrix graph shown below has given accuracy of 99.5%. We also get the Kappa coefficient accuracy is 98.7%. 
+    And the Kappa coefficient can be used to evaluate the accuracy of the classification. Therefore, we could notice the performance provided a good result since it has a high accuracy score. 
+</p>
+<img src="images/nb_r_2.png" width="450" height="400">
+
+<br>
+<br>
+<h5><b>Conclusion:</b></h5>
+<p>
+  To conclude, we used Python to predict our accuracy score of both test and train data for sentiment analysis. That means we could determine how our test and train data works on the sentiment words. And 
+  the result that we got is around 64% to 71%. That seems not too bad, but it is still not highly significant. And in the R section, we predict the accuracy score of the total number of words in tweets data. And
+  for this prediction, we get an extremely high score of around 99%. 
+</p>
+<p>
+  As mentioned above, we got two groups of predictions with Naive Bayes methods. And all of them seem good, but sentiment analysis predictions are not too high accuracy scores. However, it 
+  might be because we do not have a large dataset to train and predict. So, if we have any chance in the future, we could get more datasets and a larger dataset to redo our predictions. The result will become
+  better and more convincing. However, we will also compare our accuracy score of sentiment analysis with other methods, and we will see which one performs best in the end.
+</p>
+<br>
 
 
 
-
+<h5><b>References:</b></h5>
+<p>
+  Ratz, Arthur V. “Multinomial NAЇVE Bayes' for Documents Classification and Natural Language Processing (NLP).” Medium, Towards Data Science, 8 Apr. 2022, https://towardsdatascience.com/multinomial-na%C3%AFve-bayes-for-documents-classification-and-natural-language-processing-nlp-e08cc848ce6. 
+</p>
+<p>
+  Ferreira, Hugo. “Confusion Matrix and Other Metrics in Machine Learning.” Medium, Hugo Ferreira's Blog, 4 Apr. 2018, https://medium.com/hugo-ferreiras-blog/confusion-matrix-and-other-metrics-in-machine-learning-894688cb1c0a. 
+</p>
 </html>
 
